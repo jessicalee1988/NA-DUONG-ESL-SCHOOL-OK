@@ -1,0 +1,14 @@
+NA DUONG – ESL PRIMARY SCHOOL – DEPLOY FIX
+
+Đã chỉnh package.json để xử lý xung đột npm ERESOLVE:
+- vite: ^7.3.1
+- @vitejs/plugin-react: ^5.1.1
+- typescript: ^5.9.3
+- Bỏ khai báo trực tiếp esbuild ^0.25.0, để Vite/tsx tự quản lý phiên bản phụ thuộc tương thích.
+
+Giữ nguyên mã ứng dụng, dữ liệu và 140 file WAV trong public/audio.
+
+LƯU Ý: Không thể chạy npm install/npm run build đầy đủ trong môi trường đóng gói vì việc tải npm bị timeout. Đây là bản sửa cấu hình có căn cứ từ log, CHƯA được xác nhận build thành công.
+
+Triển khai: giải nén -> npm install -> npm run build. Nếu còn lỗi, gửi nguyên log mới để xử lý tiếp.
+Không dùng npm install --force hoặc --legacy-peer-deps.
